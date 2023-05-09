@@ -35,6 +35,52 @@ let config = {
 const postguardar=async(data)=>{
     config.method="POST";
     config.body=JSON.stringify(data);
-    let res=await (await fetch("http://localhost:4018/tiquetes", config)).json(); //los datos que se envian al servidor
+    let res=await (await fetch("http://localhost:4020/tiquete", config)).json(); //los datos que se envian al servidor
 }
 
+const getlistar=async()=>{
+    config.method="GET";
+    config.body=JSON.stringify();//se esta pasando con la misma data pero dejandolo vacio entonces ya no se estaria pasando
+    //resEgresos y resIngresos son arreglos de objetos
+    let restiquetes=await (await fetch("http://localhost:4020/tiquete", config)).json();
+    //console.log(resIngresos, resEgresos);
+    //console.log(resEgresos[0].ingreso, resEgresos[0].valor);
+    tableDom(restiquetes)
+    let sumaValor1iva=calculoIva1(restiquetes)
+    let sumaValor2iva=calculoIva2(restiquetes)
+    vuelo(sumaValor1iva, sumaValor2iva)
+}
+
+const tableDom=(restiquetes)=>{
+    let tbody=document.querySelector('#table-content');
+    tbody.innerHTML="";
+    res.forEach(tiquetes=>{
+        let tr=`
+        <tr>
+            <td>${tiquetes.id}</td>
+            <td>${tiquetes.numTiquete}</td>
+            <td>${tiquetes.valorTiquete}</td>
+            <td>${tiquetes.valorIva}</td>
+            <td>${tiquetes.valorTotal}</td>
+            <td>${tiquetes.fechaTiquete}</td>
+            <td>${tiquetes.idCliente}</td>
+            <td>${tiquetes.idVuelo}</td>
+            <td>
+                <button class="btn btn-warning" data-accion="PUT" onclick="editarTiquete(${tiquetes.id})">Editar</button>
+                <button class="btn btn-danger" data-accion="DELETE" onclick="eliminarTiquete(${tiquetes.id})">Eliminar</button>
+            </td>
+        </tr>
+        `;
+        tbody.insertAdjacentHTML('beforeend', tr);
+    })
+    console.log(tableDom);
+}
+
+const sumaValor1iva=(valor)=>{
+    let iva1=valor*0.16;
+    return iva1;
+}
+const sumaValor2iva=(valor)=>{
+    let iva2=valor*0.05;
+    return iva2;
+}

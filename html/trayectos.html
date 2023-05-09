@@ -45,5 +45,19 @@
       </div>
     </div>
   </nav>
+  <section class="modCliente">
+    <p><strong>Registro de Trayectos</strong></p>
+    <div class="ingresar">
+        <form id="cliente">
+            <input type="text" name="numAero" maxlength="20" id="numAero" placeholder="Ingrese Numero de Aeronave" required>
+            <input type="number" name="cantidadPa" maxlength="10" id="cantidadPa" placeholder="Ingrese CantidadPasajeros">
+            <input type="date" name="fechaCompra" maxlength="10" id="fechaCompra" placeholder="Ingrese de la compra" required>
+            <input type="number" name="valor" maxlength="10" id="valor" placeholder="Ingrese el valor">
+            <input type="text" name="numMatr" maxlength="25" id="NumMatr" placeholder="Ingrese Numero Matricula" required>
+            <p id="invalid-message-1" class="invalid-message" style="display: none;">Por favor, complete todos los campos.</p>
+            <input type="submit" data-accion="POST" value="Enviar">
+        </form> 
+    </div>
+  </section>
 </body>
 </html>

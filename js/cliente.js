@@ -1,7 +1,3 @@
-
-/*SECCION CLIENTE */
-
-
 let cliente=document.querySelector('#cliente');
 cliente.addEventListener('submit', (x)=>{
     //x es un paremetro que cuando se active el evento x se comvierte en x=submit  (x es el evento de submit)
@@ -24,14 +20,17 @@ let config = {
 const postguardar=async(data)=>{
     config.method="POST";
     config.body=JSON.stringify(data);
-    let res=await (await fetch("http://localhost:4018/cliente", config)).json(); //los datos que se envian al servidor
+    let res=await (await fetch("http://localhost:4020/cliente", config)).json(); //los datos que se envian al servidor
+    getlistar();
 }
-
+/* EL PROCESO DEL BUSCADOR ESTABA CORRECTO PERO AL MOMENTO DE INGRESAR NO ME APARECIA LOS DATOS Y NO LO PUDE IMPLEMETAR EN EL DOM */
+/*PORFIS VALGANME ALGUITO :,C */
+/*
 //Buscador de clientes
 const getClienteJson=async(search)=>{
     config.method="GET";
     config.body=JSON.stringify();
-    let resCliente=await (await fetch(`http://localhost:4018/cliente?q=${search}`,config)).json();
+    let resCliente=await (await fetch(`http://localhost:4011/cliente?q=${search}`,config)).json();
     return resCliente
 }
 
@@ -62,17 +61,57 @@ const eventClickCliente= (id, numIdentClien, nombreCliente, apellidoCliente, ciu
     let clienteSele = cliente.find(cliente.id == id)
     if (clienteSele == undefined) {
         cliente.push({id, numIdentClien, nombreCliente, apellidoCliente, ciudadOrigen, correoelectronico})
+        let str =
+        `
+        <tr id="tr-${id}">
+            <th>
+                <td>
+                    <button id="btnCliente-${id}" onclick="funcionEliminar(this)">Eliminar</button>
+                </td>
+            </th>
+            <th>
+                <p>${numIdentClien}</p>
+            </th>
+            <th>
+                <p>${nombreCliente}</p>
+            </th>
+            <th>
+                <p>${apellidoCliente}</p>
+            </th>
+            <th>
+                <p>${ciudadOrigen}</p>
+            </th>
+            <th>
+                <p>${correoelectronico}</p>
+            </th>
+        </tr>
+        `
         let tbody = document.querySelector("#tableClientes-tbody");
         tbody.insertAdjacentHTML("beforeend", str)
     }
     
 }
 
+const funcionEliminar=async(x)=>{
+    config.method="DELETE";
+            console.log(x)
+            let diferenciaeliminar=x.id.split("-")[0]
+            let id=x.id.split("-")[1]
+            let url
+            if (diferenciaeliminar=="btnCliente"){
+                url=`http://localhost:4011/cliente/${id}`
+            }
+    await fetch(url,config)//borrar en el json
+    getCliente()//despues de borrar vuelve a listar (para que se muestre sin el dato eliminado)
+}
+
+getCliente() //vuelve a listar todos los datos y que actualice al incio
+*/
 
 const getlistar=async()=>{
     config.method="GET";
     config.body=JSON.stringify();
-    let resClientes=await (await fetch("http://localhost:4018/cliente", config)).json();
+    let resClientes=await (await fetch("http://localhost:4020/cliente", config)).json();
     tableClientes(resClientes)
 }
 const tableClientes = (resClientes) => {
@@ -116,7 +155,7 @@ const funcionEliminar=async(x)=>{
             let id=x.id.split("-")[1]
             let url
             if (diferenciaeliminar=="btnCliente"){
-                url=`http://localhost:4018/cliente/${id}`
+                url=`http://localhost:4020/cliente/${id}`
             }
     await fetch(url,config)//borrar en el json
     getlistar()//despues de borrar vuelve a listar (para que se muestre sin el dato eliminado)

@@ -45,5 +45,20 @@
       </div>
     </div>
   </nav>
+  <section class="modCliente">
+    <p><strong>Registro de Empleados</strong></p>
+    <div class="ingresar">
+        <form id="empleados">
+            <input type="number" name="numIdentClien" maxlength="20" id="numIdentClien" placeholder="Ingrese el numero de documento" required>
+            <input type="text" name="nombreEmpleado" maxlength="20" id="nombreEmpleado" placeholder="Ingrese nombre empleado" required>
+            <input type="text" name="apellidoEmpleado" maxlength="20" id="apellidoCEmpleado" placeholder="Ingrese apellido Empleado" required>
+            <input type="number" name="telEmpleado" maxlength="20" id="telEmpleado" placeholder="Ingrese el telefono del cliente" required>
+            <input type="text" name="profesion" maxlength="25" id="profesion" placeholder="Ingrese la profesion" required>
+            <input type="text" name="correoelectronico" maxlength="20" id="correoelectronico" placeholder="Ingrese el correo electronico" required>
+            <p id="invalid-message-1" class="invalid-message" style="display: none;">Por favor, complete todos los campos.</p>
+            <input type="submit" data-accion="POST" value="Enviar">
+        </form> 
+    </div>
+</section>
 </body>
 </html>

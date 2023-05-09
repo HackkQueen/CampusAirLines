@@ -1,19 +1,38 @@
 {
   "cliente": [
     {
-      "numIdentClien": "111",
-      "nombreCliente": "eeew",
-      "apellidoCliente": "wr",
-      "telClien": "213",
-      "fechaNacimiento": "2023-05-31",
-      "ciudadOrigen": "wereweer",
-      "paisOrigen": "aef",
-      "correoelectronico": "adga",
-      "id": 2
+      "numIdentClien": "1005163255",
+      "nombreCliente": "Maria Fernanda",
+      "apellidoCliente": "Cubides Jaimes",
+      "telClien": "3046722903",
+      "fechaNacimiento": "2003-04-11",
+      "ciudadOrigen": "Bucaramanga",
+      "paisOrigen": "Colombia",
+      "correoelectronico": "marifer@gmail.com",
+      "id": 1
+    },
+    {
+      "numIdentClien": "21313",
+      "nombreCliente": "sdf",
+      "apellidoCliente": "sfs",
+      "telClien": "1231",
+      "fechaNacimiento": "2023-05-17",
+      "ciudadOrigen": "1sada",
+      "paisOrigen": "ada",
+      "correoelectronico": "asd",
+      "id": 8
     }
-    
   ],
-  "tiquete":[
+  "tiquete": [
+    {}
+  ],
+  "empleado": [
+    {}
+  ],
+  "rutas": [
+    {}
+  ],
+  "trayectos": [
     {}
   ]
 }

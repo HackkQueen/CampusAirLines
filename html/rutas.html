@@ -45,5 +45,21 @@
       </div>
     </div>
   </nav>
+  <section class="modCliente">
+    <p><strong>Registro de Rutas</strong></p>
+    <div class="ingresar">
+        <form id="cliente">
+            <input type="number" name="numIdenRuta" maxlength="20" id="numIdentRuta" placeholder="Ingrese el id Ruta" required>
+            <input type="text" name="nombreRuta" maxlength="20" id="nombreRuta" placeholder="Ingrese nombre Ruta" required>
+            <input type="text" name="ciudadOrigen" maxlength="20" id="ciudadOrigen" placeholder="Ingrese ciudad origen Ruta" required>
+            <input type="number" name="ciudadDestino" maxlength="20" id="ciudadDestino" placeholder="Ingrese ciudad destino Ruta" required>
+            <input type="number" name="totalMillas" maxlength="20" id="totalMillas" placeholder="Ingrese total millas ruta" required>
+            <input type="number" name="valorMillas" maxlength="20" id="valorMillas" placeholder="Ingrese valor milla ruta" required>
+            <p id="invalid-message-1" class="invalid-message" style="display: none;">Por favor, complete todos los campos.</p>
+            <input type="submit" data-accion="POST" value="Enviar">
+        </form> 
+    </div>
+
+  </section>
 </body>
 </html>
