@@ -1,0 +1,188 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Busca en tipo numero para quitar el aparato de subir y bajar en las casillas*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+--------------------------------SECCION TIQUETES------------------
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    color: white;
+    background-color: rgba(133, 106, 255, 0.589);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid black;
+}
+#close {
+    background-color: rgba(161, 140, 255, 0.705);
+    border-radius: 8px;
+    width: 3.5rem;
+    height: 1.9rem;
+}
+
+@media (max-width: 1360px) {
+
+    .first-message {
+        margin-top: 100px;
+
+    }
+
+    .team-container {
+
+        width: 100%;
+
+
+    }
+
+
+}
+
+@media (min-width: 1920px) {
+
+    .first-message {
+        margin-top: 40px;
+
+    }
+
+    .team-container {
+        width: 100%;
+
+
+    }
+
+
+
+}
+
+
+
+
+-------------------SECCION CLIENTES-------------------
+.medioBuscar{
+    text-align: center;
+    background: linear-gradient(to right, #9a33d6, #cc10f2, #3359d6, #031a66);
+    padding: 40px;
+}
+.medioBuscar ul{
+    background: linear-gradient(to right, #9a33d6, #cc10f2, #3359d6, #031a66);
+}
+
+.medioListar{
+    text-align: center;
+    margin: 0;
+    background-color: rgb(253, 126, 243);
+    margin: 0;
+    padding: 40px;
+}
+#tableClientes{
+    border-collapse: collapse;
+    border: 2px solid black;
+    padding: 5px;
+    table-layout: fixed;
+    width: 100%;
+    background-color: #e4e9dd;
+}
+table, th {
+    border: 2px solid black;
+}
+
+/*AGREGUE PARA VALIDAR INPUTS*/
+.invalid input[type="text"],
+.invalid input[type="date"] {
+  border: 1px solid red;
+}
+
+.invalid-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.modCliente{
+    text-align: center;
+    margin: 0;
+    background-color: rgb(218, 218, 218);
+    margin: 0;
+    padding: 40px;
+}
+.modCliente p{
+    margin: 0;
+    padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(218, 218, 218);
+}
+.modCliente form{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(218, 218, 218);
+}   

@@ -1,0 +1,19 @@
+{
+  "cliente": [
+    {
+      "numIdentClien": "111",
+      "nombreCliente": "eeew",
+      "apellidoCliente": "wr",
+      "telClien": "213",
+      "fechaNacimiento": "2023-05-31",
+      "ciudadOrigen": "wereweer",
+      "paisOrigen": "aef",
+      "correoelectronico": "adga",
+      "id": 2
+    }
+    
+  ],
+  "tiquete":[
+    {}
+  ]
+}

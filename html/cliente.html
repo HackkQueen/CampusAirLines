@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <title>CampusAirlinesCliente</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/cliente.js" defer></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Campus Airlines</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/trayectos.html">Trayectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/rutas.html">Rutas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/tiquetes.html">Tiquetes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/empleados.html">Empleados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/cliente.html">Clientes</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+    <section class="medioBuscar">
+        <input type="text" name="ingresoBuscar" maxlength="20" id="ingresoBuscar" placeholder="Buscardor del Cliente">
+        <p id="invalid-message-2" class="invalid-message" style="display: none;"></p>
+        <ul id="ul-clientes" style="background-color: white; color:black"><!--Urdened list --- Traduccion: Lista desordenada-->
+            <!--AQUI ES DONDE SE REALIZARA EL PROCESO DE BUSCAR-->
+        </ul>
+    </section>
+    <section class="medioListar">
+        <ul id="listaDatosClientes"></ul>
+        <table id="tableClientes">
+            <thead>
+                <tr>
+                    <th>
+                    
+                    </th>
+                    <th>
+                      Identificacion
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Apellido
+                    </th>
+                    <th>
+                        Ciudad
+                    </th>
+                    <th>
+                        Correo
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tableClientes-tbody">
+                <!--AQUI ES DONDE VA A SUCEDERA LA MAGIA-->
+            </tbody>
+        </table>
+    </section>
+    <section class="modCliente">
+        <p><strong>Registro de Clientes</strong></p>
+
+        <div class="ingresar">
+            <form id="cliente">
+                <input type="number" name="numIdentClien" maxlength="20" id="numIdentClien" placeholder="Ingrese el numero de identificacion del cliente" required>
+                <input type="text" name="nombreCliente" maxlength="20" id="nombreCliente" placeholder="Ingrese nombre cliente" required>
+                <input type="text" name="apellidoCliente" maxlength="20" id="apellidoCliente" placeholder="Ingrese apellido cliente" required>
+                <input type="number" name="telClien" maxlength="20" id="telClien" placeholder="Ingrese el telefono del cliente" required>
+                <input type="date" name="fechaNacimiento" maxlength="10" id="fechaNacimiento" placeholder="Ingrese la fecha de Nacimiento" required>
+                <input type="text" name="ciudadOrigen" maxlength="25" id="ciudadOrigen" placeholder="Ingrese la ciudad de origen" required>
+                <input type="text" name="paisOrigen" maxlength="25" id="paisOrigen" placeholder="Ingrese el pais de origen" required>
+                <input type="text" name="correoelectronico" maxlength="20" id="correoelectronico" placeholder="Ingrese el correo electronico" required>
+                <p id="invalid-message-1" class="invalid-message" style="display: none;">Por favor, complete todos los campos.</p>
+                <input type="submit" data-accion="POST" value="Enviar">
+            </form> 
+        </div>
+    
+    </section>
+    
+
+</body>
+</html>
